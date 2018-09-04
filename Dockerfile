@@ -30,4 +30,5 @@ RUN echo ". /opt/openMHA/bin/thismha.sh" >> /root/.bashrc
 # Image with openmha without source code or dev environment
 FROM openmha-rtbase as openmha-rt
 COPY --from=openmha-all /opt/openMHA/bin /opt/openMHA/bin
+COPY --from=openmha-all /opt/openMHA/lib /opt/openMHA/lib
 COPY --from=openmha-all /root/.bashrc /root/.bashrc
